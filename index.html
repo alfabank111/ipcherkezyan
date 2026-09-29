@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Свежие фрукты и овощи — ИП Черкезян Л.Р.</title>
+  <style>
+    :root {
+      --amber: #f59e0b;
+      --amber-dark: #d97706;
+      --amber-light: #fef3c7;
+      --green: #16a34a;
+      --bg: #fffbeb;
+      --text: #1f2937;
+      --white: #fff;
+      --gray: #6b7280;
+    }
+    * { box-sizing: border-box; }
+    body { font-family: Georgia, 'Times New Roman', serif; margin: 0; padding: 0; color: var(--text); background: var(--bg); }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, var(--amber), var(--amber-dark)); color: var(--white); padding: 3rem 2rem; text-align: center; }
+    .hero h1 { margin: 0 0 0.5rem; font-size: 2.4rem; }
+    .hero p { margin: 0.3rem 0; font-size: 1.1rem; opacity: 0.95; }
+    .hero .inn-badge { display: inline-block; margin-top: 1rem; background: rgba(255,255,255,0.2); padding: 0.4rem 1rem; border-radius: 20px; font-weight: bold; }
+
+    /* INFO BAR */
+    .info-bar { background: var(--white); border-bottom: 3px solid var(--amber); padding: 1rem 2rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; font-size: 0.95rem; }
+    .info-bar span { display: flex; align-items: center; gap: 0.5rem; }
+    .info-bar strong { color: var(--amber-dark); }
+
+    /* CATALOG */
+    main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    .section-title { text-align: center; font-size: 1.8rem; margin: 1rem 0 2rem; color: var(--amber-dark); border-bottom: 2px solid var(--amber); display: inline-block; padding-bottom: 0.3rem; }
+    .section-title-wrap { text-align: center; }
+
+    .catalog { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+
+    .card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 3px 8px rgba(0,0,0,0.08); border: 1px solid #fde68a; transition: transform 0.2s; }
+    .card:hover { transform: translateY(-4px); }
+    .card-header { background: var(--amber-light); padding: 1rem; text-align: center; }
+    .card-header h3 { margin: 0; color: var(--amber-dark); font-size: 1.15rem; }
+    .card-body { padding: 1rem; }
+    .card-price { font-size: 1.3rem; font-weight: bold; color: var(--green); margin-bottom: 0.6rem; }
+    .card-section { margin-top: 0.5rem; font-size: 0.88rem; color: var(--gray); }
+    .card-section strong { color: var(--text); display: block; margin-bottom: 0.2rem; }
+    .card-section ul { margin: 0; padding-left: 1.1rem; }
+    .card-section li { margin-bottom: 0.15rem; }
+
+    /* ORDER */
+    .order-section { background: var(--white); border-radius: 12px; padding: 2rem; margin-top: 2.5rem; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border: 1px solid #fde68a; }
+    .order-section h3 { color: var(--amber-dark); font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .order-steps { max-width: 600px; margin: 1.5rem auto; text-align: left; }
+    .order-steps ol { padding-left: 1.2rem; line-height: 1.8; }
+    .order-steps li { margin-bottom: 0.3rem; }
+    .order-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
+    .btn { padding: 0.9rem 1.6rem; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; text-decoration: none; color: var(--white); font-size: 1rem; transition: filter 0.2s; }
+    .btn:hover { filter: brightness(0.92); }
+    .btn-pay { background: var(--green); }
+    .btn-wa { background: #25D366; }
+    .btn-call { background: var(--amber-dark); }
+    .order-note { margin-top: 1.5rem; color: var(--gray); font-size: 0.88rem; line-height: 1.5; }
+
+    /* FOOTER */
+    footer { background: var(--text); color: #d1d5db; padding: 2rem; text-align: center; font-size: 0.9rem; }
+    footer p { margin: 0.3rem 0; }
+    footer .footer-inn { color: var(--amber); font-weight: bold; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.8rem; }
+      .info-bar { flex-direction: column; gap: 0.8rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Фрукты и овощи</h1>
+    <p>Свежие. Сочные. Каждый день.</p>
+    <div class="inn-badge">ИНН: 611104397926</div>
+  </section>
+
+  <!-- INFO BAR -->
+  <div class="info-bar">
+    <span><strong>Адрес:</strong> Ростов-на-Дону, Королева 1Н</span>
+    <span><strong>Телефон:</strong> 8 (961) 273-78-80</span>
+    <span><strong>Часы:</strong> 10:00 — 17:00</span>
+  </div>
+
+  <!-- CATALOG -->
+  <main>
+    <div class="section-title-wrap">
+      <h2 class="section-title">Каталог — 10 позиций</h2>
+    </div>
+
+    <div class="catalog">
+
+      <article class="card">
+        <div class="card-header"><h3>Яблоки «Гала»</h3></div>
+        <div class="card-body">
+          <div class="card-price">180 ₽ / кг</div>
+          <div class="card-section"><strong>Характеристики:</strong>
+            <ul><li>Сорт: Гала</li><li>Происхождение: Россия</li><li>Хранение: до 30 дней, +2…+4°C</li></ul>
+          </div>
+          <div class="card-section"><strong>Комплектация:</strong>
+            <ul><li>Сетка 1 / 3 / 5 кг или на развес</li></ul>
+          </div>
+          <div class="card-section"><strong>Гарантия:</strong>
+            <ul><li>Возврат/обмен в день покупки</li><li>Претензии — в течение 24 часов</li></ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-header"><h3>Огурцы грунтовые</h3></div>
+        <div class="card-body">
+          <div class="card-price">240 ₽ / кг</div>
+          <div class="card-section"><strong>Характеристики:</strong>
+            <ul><li>Длина: 12–18 см</li><li>Происхождение: Россия</li><li>Хранение: до 7 дней, +4…+8°C</li></ul>
+          </div>
+          <div class="card-section"><strong>Комплектация:</strong>
+            <ul><li>Пучки по 5–6 шт. или на развес</li></ul>
+          </div>
+          <div class="card-section"><strong>Гарантия:</strong>
+            <ul><li>Возврат/обмен в день покупки</li><li>Претензии — в течение 24 часов</li></ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-header"><h3>Бананы эквадорские</h3></div>
+        <div class="card-body">
+          <div class="card-price">160 ₽ / кг</div>
+          <div class="card-section"><strong>Характеристики:</strong>
+            <ul><li>Зрелость: средняя</li><li>Происхождение: Эквадор</li><li>Хранение: до 5 дней, +13…+15°C</li></ul>
+          </div>
+          <div class="card-section"><strong>Комплектация:</strong>
+            <ul><li>Связки ~1,2–1,5 кг или на развес</li></ul>
+          </div>
+          <div class="card-section"><strong>Гарантия:</strong>
+            <ul><li>Возврат/обмен в день покупки</li><li>Претензии — в течение 24 часов</li></ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-header"><h3>Помидоры «Бычье сердце»</h3></div>
+        <div class="card-body">
+          <div class="card-price">320 ₽ / кг</div>
+          <div class="card-section"><strong>Характеристики:</strong>
+            <ul><li>Вес плода: 200–300 г</li><li>Происхождение: Россия</li><li>Хранение: до 7 дней, +8…+12°C</li></ul>
+          </div>
+          <div class="card-section"><strong>Комплектация:</strong>
+            <ul><li>На развес или контейнер 500 г</li></ul>
+          </div>
+          <div class="card-section"><strong>Гарантия:</strong>
+            <ul><li>Возврат/обмен в день покупки</li><li>Претензии — в течение 24 часов</li></ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-header"><h3>Помидоры «Черри красные»</h3></div>
+        <div class="card-body">
+          <div class="card-price">410 ₽ / кг</div>
+          <div class="card-section"><strong>Характеристики:</strong>
+            <ul><li>Вес плода: 15–20 г</li><li>Происхождение: Россия</li><li>Хранение: до 10 дней, +8…+12°C</li></ul>
+          </div>
+          <div class="card-section"><strong>Комплектация:</strong>
+            <ul><li>Контейнер 250 г или на развес</li></ul>
+          </div>
+          <div class="card-section"><strong>Гарантия:</strong>
+            <ul><li>Возврат/обмен в день покупки</li><li>Претензии — в течение 24 часов</li></ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-header"><h3>Груша «Конференция»</h3></div>
+        <div class="card-body">
+          <div class="card-price">270 ₽ / кг</div>
+          <div class="card-section"><strong>Характеристики:</strong>
+            <ul><li>Сорт: Конференция</li><li>Происхождение: Россия / Турция</li><li>Хранение: до 20 дней, +2…+4°C</li></ul>
+          </div>
+          <div class="card-section"><strong>Комплектация:</strong>
+            <ul><li>Сетка 1 / 3 кг или на развес</li></ul>
+          </div>
+          <div class="card-section"><strong>Гарантия:</strong>
+            <ul><li>Возврат/обмен в день покупки</li><li>Претензии — в течение 24 часов</li></ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-header"><h3>Перец болгарский красный</h3></div>
+        <div class="card-body">
+          <div class="card-price">340 ₽ / кг</div>
+          <div class="card-section"><strong>Характеристики:</strong>
+            <ul><li>Размер: 12–16 см</li><li>Происхождение: Россия / Азербайджан</li><li>Хранение: до 14 дней, +6…+10°C</li></ul>
+          </div>
+          <div class="card-section"><strong>Комплектация:</strong>
+            <ul><li>На развес или сетка 1–2 кг</li></ul>
+          </div>
+          <div class="card-section"><strong>Гарантия:</strong>
+            <ul><li>Возврат/обмен в день покупки</li><li>Претензии — в течение 24 часов</li></ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-header"><h3>Картофель молодой</h3></div>
+        <div class="card-body">
+          <div class="card-price">90 ₽ / кг</div>
+          <div class="card-section"><strong>Характеристики:</strong>
+            <ul><li>Сорт: Удача</li><li>Происхождение: Россия</li><li>Хранение: до 20 дней, +4…+8°C</li></ul>
+          </div>
+          <div class="card-section"><strong>Комплектация:</strong>
+            <ul><li>Сетка 5 / 10 кг или на развес</li></ul>
+          </div>
+          <div class="card-section"><strong>Гарантия:</strong>
+            <ul><li>Возврат/обмен в день покупки</li><li>Претензии — в течение 24 часов</li></ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-header"><h3>Морковь свежая</h3></div>
+        <div class="card-body">
+          <div class="card-price">85 ₽ / кг</div>
+          <div class="card-section"><strong>Характеристики:</strong>
+            <ul><li>Длина: 15–20 см</li><li>Происхождение: Россия</li><li>Хранение: до 30 дней, +1…+4°C</li></ul>
+          </div>
+          <div class="card-section"><strong>Комплектация:</strong>
+            <ul><li>Сетка 2 / 5 кг или на развес</li></ul>
+          </div>
+          <div class="card-section"><strong>Гарантия:</strong>
+            <ul><li>Возврат/обмен в день покупки</li><li>Претензии — в течение 24 часов</li></ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-header"><h3>Апельсины турецкие</h3></div>
+        <div class="card-body">
+          <div class="card-price">210 ₽ / кг</div>
+          <div class="card-section"><strong>Характеристики:</strong>
+            <ul><li>Сорт: Вашингтон Навел</li><li>Происхождение: Турция</li><li>Хранение: до 14 дней, +4…+8°C</li></ul>
+          </div>
+          <div class="card-section"><strong>Комплектация:</strong>
+            <ul><li>Сетка 2 / 3 кг или на развес</li></ul>
+          </div>
+          <div class="card-section"><strong>Гарантия:</strong>
+            <ul><li>Возврат/обмен в день покупки</li><li>Претензии — в течение 24 часов</li></ul>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ORDER -->
+    <section class="order-section">
+      <h3>Как оформить заказ</h3>
+      <p>Три простых шага — и свежие продукты у вас:</p>
+      <div class="order-steps">
+        <ol>
+          <li>Выберите нужные позиции из каталога выше.</li>
+          <li>Нажмите «Оплатить онлайн» — попадёте на защищённую страницу оплаты картой.</li>
+          <li>После оплаты позвоните или напишите в WhatsApp — согласуем время получения.</li>
+        </ol>
+      </div>
+      <div class="order-buttons">
+        <!-- ЗАМЕНИТЕ # НА ВАШУ ПЛАТЁЖНУЮ ССЫЛКУ -->
+        <a href="#" class="btn btn-pay">Оплатить онлайн</a>
+        <a href="https://wa.me/79612737880" class="btn btn-wa">WhatsApp</a>
+        <a href="tel:+79612737880" class="btn btn-call">Позвонить</a>
+      </div>
+      <p class="order-note">
+        При онлайн-оплате вы получите электронный чек.<br>
+        Возврат и обмен — в день покупки при сохранении товарного вида. Претензии по качеству — в течение 24 часов.
+      </p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>ИП Черкезян Лиана Робертовна</strong></p>
+    <p class="footer-inn">ИНН: 611104397926 | ОГРНИП: 326619600046112</p>
+    <p>Ростов-на-Дону, Королева 1Н | 8 (961) 273-78-80</p>
+    <p>Часы работы: 10:00 — 17:00</p>
+    <p>&copy; 2026 Фрукты и овощи</p>
+  </footer>
+
+</body>
+</html>
